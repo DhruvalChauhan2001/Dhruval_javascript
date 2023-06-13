@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ *{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    margin-top: 20%;
+    background-color: blueviolet;
+}
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+   
+    border: 5px solid rgb(228, 228, 43);
+    background-color: blueviolet;
+    font-size: 60px;
+    margin: auto;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+button::before{
+    content:"";
+    position: absolute;
+    height:100% ;
+    width:25% ;
+    background-color:yellow;
+    left:-25%;
+    transition: all 1s ease ; 
+    z-index: -1;
+}
+
+button:hover::before{
+    left: 0%;
+}
+button::after{
+    content:"";
+    position: absolute;
+    height:100% ;
+    width:25%;
+    background-color:yellow;
+    bottom: 100%;
+    left: 25%;
+    transition: all 1s ease ; 
+    z-index: -1;
+}
+button:hover:after{
+    bottom: 0%;
+} 
+.lefttop::after{
+    content:"";
+    position: absolute;
+    height:100% ;
+    width:25%;
+    background-color:yellow;
+    top: 100%;
+    right: 25%;
+    transition: all 1s ease ; 
+    z-index: -1;
+}
+button:hover .lefttop::after{
+    top: 0%;
+}
+.lefttop::before{
+    content:"";
+    position: absolute;
+    height:100% ;
+    width:25%;
+    background-color:yellow;
+    top: 0%;
+    right: -25%;
+    transition: all 1s ease ; 
+    z-index: -1;
+}
+button:hover .lefttop::before{
+    right: 0%;
+}
+    </style>
+</head>
+<body>
+        <button class="item">HOVER ME
+            <span class="lefttop"></span>
+        </button>
+</body>
+</html>

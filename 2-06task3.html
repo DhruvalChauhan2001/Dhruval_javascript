@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            margin: 1rem;
+           background-color: darkgrey;
+        }
+        .main{
+            display: flex;
+            flex-direction: row;
+        }
+        .card{
+            height: 90vh;
+            width: 20vw;
+            border-radius: 25px;
+            border: 5px solid black;
+            box-shadow: 6px 6px 6px black;
+            position: relative;
+            transition: 2s;
+            
+        }
+        .card:hover{
+            width: 100%;
+            
+        }
+        .write{
+            position: absolute;
+            bottom: 3%;
+            left: 65%;
+            color: white; 
+            opacity: 0.0;
+            transition: 1s;
+           
+        }
+        .card:hover .write{
+            left: 5%;
+            opacity: 1;
+           
+        }
+       
+        img{
+            height: 100%;
+            width: 100%;
+            border-radius: 25px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="card"><img src="https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111-1500x1000.jpg" alt="">
+            <div class="write">
+            <h2>hello1</h2>
+            </div>
+        </div>
+        <div class="card"><img src="https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=" alt="">
+            <div class="write">
+                <h2>hello1</h2>
+                </div>
+            </div>
+        <div class="card"> <img src="https://www.stockvault.net/data/2011/05/31/124348/thumb16.jpg" alt="">
+            <div class="write">
+                <h2>hello1</h2>
+                </div>
+        </div>
+        <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4J2BIFkZ4cdjhdhjekfeZqfwPBDLHTxeUXFcegGnKWg&s" alt="">
+            <div class="write">
+                <h2>hello1</h2>
+                </div>
+        </div>
+        <div class="card"><img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" alt="">
+            <div class="write">
+                <h2>hello1</h2>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
