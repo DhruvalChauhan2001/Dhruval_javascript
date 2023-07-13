@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="july13.js"></script>
+</head>
+<body>
+    <h1 id="id12">learn to java script</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, consequuntur deleniti cumque recusandae esse, magni ad maxime nihil quod quos qui asperiores assumenda vitae neque alias voluptatem adipisci ipsam voluptates.</p>
+    
+    <div class="parent">
+        <div class="day">Mon day</div>
+        <div class="day">Tue day</div>
+        <div class="day">Wed day</div>
+        <div class="day">Thu day</div>
+    </div>
+
+</body>
+
+    <script>
+        const dhru = document.querySelector(".parent")
+        console.log(dhru)
+        console.log(dhru.children)
+        console.log(dhru.children[0])
+        console.log(dhru.children[3])
+
+        for(let i=0 ;i < dhru.children.length ;i++ ){
+            console.log( dhru.children[i].innerHTML);
+        }
+
+        dhru.children[1].style.color="red";
+        dhru.children[2].style.backgroundColor="green"
+
+        console.log(dhru.parentElement)
+        console.log(dhru.nextElementSibling)
+
+    </script>
+</html>
