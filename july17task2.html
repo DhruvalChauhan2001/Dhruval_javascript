@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="changeColor('home')">Home</a></li>
+      <li><a href="#" onclick="changeColor('about')">About</a></li>
+      <li><a href="#" onclick="changeColor('contact')">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <div id="content">
+    <h2>Welcome to the website!</h2>
+  </div>
+  
+</body>
+
+
+<script>
+  function changeColor(tagId) {
+  // Reset all tags to their default color
+  var tags = document.getElementsByTagName(tagId);
+  for (var i = 0; i < tags.length; i++) {
+    tags[i].style.color = '';
+  }
+
+  // Change the color of the first matching tag
+  var tag = document.querySelector(tagId);
+  if (tag) {
+    tag.style.color = 'red';
+  }
+}
+
+</script>
+</html>

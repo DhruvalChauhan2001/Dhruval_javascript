@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
           *{
             margin: 0%;
@@ -44,9 +45,12 @@
             align-items: center;
             flex-direction: row;
             color:#1F2E35CC;
+            gap: 20px;
         }
         .active {
             color:red;
+            text-decoration: underline;
+            background-color: black;
         }
     </style>
 </head>
@@ -63,17 +67,45 @@
                         
                         <a class="navbar1">Home</a>
                         <a class="navbar2" >About</a>
+                        <a class="navbar3" >Contect</a>
                         <a class="navbar3" >Services</a>
-                
+                        <a class="navbar3" >Services2</a>
                     </div>
             <div class="icon">
                 <i class="fa-sharp fa-solid fa-circle-xmark"></i>      
             </div>
         </div>
         </nav>
+
+
+        <!-- Sidebar -->
+    <div id="sidebar" class=  "w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+    <h3 class="w3-bar-item">Menu</h3>
+    <a href="#" class="w3-bar-item w3-button">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button">Link 3</a>
+  </div>
+
+  
+
 </body>
 
    <script>
+
+
+
+// var toggleSidebarButton = document.getElementById('toggleSidebar');
+// var sidebar = document.getElementById('sidebar');
+
+// toggleSidebarButton.addEventListener('click', function() {
+//   sidebar.classList.toggle('sidebar-open');
+// });
+
+
+
+// const a=document.querySelectorAll(".link")
+
+// a.forEach((li)=>li.style.color="yellow")
 
 
 var navItems = document.querySelectorAll('nav a');
