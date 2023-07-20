@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="july20.js"></script>
+
+    <style>
+/* 
+        button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } */
+        .main{
+            width: 300px;
+            height: 100px;
+            /* border: 1px solid #c3c3c3; */
+            /* display: flex; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* flex-direction:colum; */
+            gap: 1rem;
+            /* margin: 10rem; */
+            margin-left: 10rem;
+        }
+        .body{
+            /* margin: 20px; */
+            padding: 2rem;
+            border: 2px solid red;
+            /* display: flex; */
+            /* justify-content: center;
+            align-items: center;
+            flex-direction:row;
+            flex-direction:column */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <button style="margin: auto; margin-top: 20rem;"><h1>Change color</h1></button> -->
+    <div class="jai">
+        <h1 id="hai"> this is h1 tag </h1>
+        <h2 id="hai">second tag</h2>
+        <h3 class="jai">thard tag </h3>
+    </div>
+        <h3 class="jai">four tag <div>hhhh</div></h3>
+    <div class="main ">
+        <div class="body" id="dhru">01</div>
+        <div class="body">02</div>
+        <div class="body">03</div>
+        <div class="body">04</div>
+        <div class="body">05</div>
+    </div>
+</body>
+    <script>
+
+        document.querySelector(".body").addEventListener("click",abcd)
+        function abcd(){
+        document.querySelector(".body").style.background="red" 
+    }  
+        // document.querySelector(".body").addEventListener("dblclick",function(){
+        //     document.querySelector(".body").style.border="3rem solid green"
+        // })
+
+    //   const b=  document.getElementById("dhru").EventListener("dblclick",remo)
+    //         // console.log(b)
+    //     function remo(){
+    //         document.getElementById("dhru").removeEventListener("click",abcd)
+    //     }
+
+    // document.querySelector(".body").onclick=abcd
+    // function abcd(){
+    //     document.querySelector(".body").style.background="red" 
+    // }  
+    
+    // document.querySelectorAll(".body").onclick=abcd
+    // function abcd(){
+    //     document.querySelectorAll(".body").style.background="red"
+    // }  
+
+
+    // document.getElementsByClassName("body")[1].onclick=abc
+    // function abc(){
+    //         document.getElementsByClassName("body")[1].style.background="red"
+    //     }
+
+        // document.getElementById("dhru").onclick=abc
+        // function abc(){
+        //     document.getElementById("dhru").style.background="red"
+        // }
+
+        // document.getElementById("dhru").ondblclick=jai
+        // function jai(){
+        //     document.getElementById("dhru").style.background="green"
+        // }
+
+    //  document.getElementsByClassName("body")[0].onClick=abc;
+    //     // console.log(a)
+    //     function abc(){
+    //         document.getElementsByClassName("body")[0].style.background="red"
+    //     }
+
+        // const a=document.URL
+        // console.log(a)
+
+        // const a= document.getElementById("hai")
+        // console.log(a)
+
+        // const b = document.getElementsByClassName("jai")[2].innerHTML
+        // console.log(b)
+
+        // const c= document.getElementsByClassName("hardik").innerHTML = "New text!";
+        // console.log(c)
+
+        // const btn = document.querySelector("button");
+
+        // function random(number) {
+        // return Math.floor(Math.random() * (number + 1));
+        // }
+
+        // btn.addEventListener("click", () => {
+        // const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        // document.body.style.backgroundColor = rndCol;
+        // });
+
+    </script>
+</html>
