@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 2rem;
+            margin-left: 2 rem;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+
+        <div class="container">
+
+            <div class="box">
+                <label for="uname"><b>E-mail</b></label>
+                <input type="email" id="dh1" placeholder="Enter Username" required>
+            </div>
+
+            <div class="box">
+                <label for="psw"><b>Password</b></label>
+                <input type="password" id="dh2" placeholder="Enter Password" required>
+
+            </div>
+
+
+            <button id="dhru" class="box" type="submit">Submit</button>
+
+    </form>
+</body>
+
+<script>
+    const submitButton = document.getElementById('dhru').addEventListener('click', function () {
+        const email = document.getElementById('dh1').value;
+        const password = document.getElementById('dh2').value;
+        alert(`Email: ${email}\nPassword: ${password}`);
+    });
+
+
+    // const submitButton = document.getElementById('dhru');
+
+    // submitButton.addEventListener('click', function () {
+    //     const email = document.getElementById('dh1').value;
+    //     const password = document.getElementById('dh2').value;
+
+    //     alert(`Email: ${email}\nPassword: ${password}`);
+    // });
+</script>
+
+</html>

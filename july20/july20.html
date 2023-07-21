@@ -36,6 +36,15 @@
             flex-direction:row;
             flex-direction:column */
         }
+        /* .jai {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      margin: 10px;
+      text-align: center;
+      line-height: 100px;
+      cursor: pointer;
+    } */
     </style>
 </head>
 
@@ -49,7 +58,7 @@
         <h3 class="jai">four tag <div>hhhh</div></h3>
     <div class="main ">
         <div class="body" id="dhru">01</div>
-        <div class="body">02</div>
+        <div class="body" onclick="abcd" >02</div>
         <div class="body">03</div>
         <div class="body">04</div>
         <div class="body">05</div>
@@ -57,10 +66,118 @@
 
     <!-- <h1 id="title">  Dom lerning 
         <span>   Chai our code </span></h1> -->
-
+        <div class="jai"></div>
+        <div class="jai"></div>
+        <div class="jai"></div>
+        <div class="jai"></div>
+        <div class="jai"></div>
 </body>
     <script>
 
+const jaiDivs = document.getElementsByClassName('jai');
+
+
+function changeBackgroundColor(event) {
+//   const randomColor = getRandomColor();
+  event.target.style.backgroundColor = "red";
+}
+
+for (const div of jaiDivs) {
+  div.addEventListener('click', changeBackgroundColor);
+}
+// function changeBackgroundColor(event) {
+//   const randomColor = getRandomColor();
+//   event.target.style.backgroundColor = randomColor;
+// }
+
+
+
+
+        // Get all elements with class name "jai"
+// const jaiDivs = document.getElementsByClassName('jai');
+
+// Function to change background color on click
+// function changeBackgroundColor(event) {
+//   const randomColor = getRandomColor();
+//   event.target.style.backgroundColor = randomColor;
+// }
+
+// Add event listener to each "jai" div
+// for (const div of jaiDivs) {
+//   div.addEventListener('click', changeBackgroundColor);
+// }
+
+// Function to generate random color
+// function getRandomColor() {
+//   const letters = '0123456789ABCDEF';
+//   let color = '#';
+//   for (let i = 0; i < 6; i++) {
+//     color += letters[Math.floor(Math.random() * 16)];
+//   }
+//   return color;
+// }
+
+
+// // Get all elements with class name "jai"
+// const jaiDivs = document.getElementsByClassName('jai');
+
+// // Function to change background color on click
+// function changeBackgroundColor(event) {
+//   const randomColor = getRandomColor();
+//   event.target.style.backgroundColor = randomColor;
+// }
+
+// // Add event listener to each "jai" div
+// for (const div of jaiDivs) {
+//   div.addEventListener('click', changeBackgroundColor);
+// }
+
+// // Function to generate random color
+// function getRandomColor() {
+//   const letters = '0123456789ABCDEF';
+//   let color = '#';
+//   for (let i = 0; i < 6; i++) {
+//     color += letters[Math.floor(Math.random() * 16)];
+//   }
+//   return color;
+
+///////////////////
+        // Get all elements with the class "jai"
+        // const jaiElements = document.querySelectorAll('.jai');
+
+        // // Function to be executed on click
+        // function handleClick(event) {
+        // // Do something when a "jai" div is clicked
+        // // console.log('Clicked!');
+        
+        // }
+
+        // // Add the event listener to each "jai" div
+        // jaiElements.forEach(element => {
+        // element.addEventListener('click', handleClick);
+        // });
+
+
+        //////////////
+        // document.querySelector(".body").onclick=abcd
+
+        // function abcd(){
+        // this.style.background="red" 
+        // } 
+// 
+        // document.getElementById("dhru").addEventListener("click",function(){
+        //     this.style.background="red"
+        // })
+
+
+
+    //  const a= document.getElementsByClassName("body").addEventListener("click",function(e){
+    //     console.log(e)
+    //      })
+    //  console.log(a)
+        // .addEventListener("click",function(e){
+        //     console.log(e)
+        // })
 
 
     // const a= document.querySelectorAll(".body").addEventListener("click",abcd)

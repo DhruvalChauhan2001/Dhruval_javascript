@@ -4,414 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
 
-    <script src="index.js"></script>
+
+/* * {box-sizing: border-box}
+
+/* Full-width input fields */
+  /* input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+} */
+
+/* input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+} */
+/* 
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+} */
+
+/* Set a style for all buttons */
+/* button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+} */
+
+/* button:hover {
+  opacity:1;
+} */
+
+/* Extra styles for the cancel button */
+/* .cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+} */
+
+/* Float cancel and signup buttons and add an equal width */
+/* .cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+} */
+
+/* Add padding to container elements */
+/* .container {
+  padding: 16px;
+} */
+
+/* Clear floats */
+/* .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+} */
+
+/* Change styles for cancel button and signup button on extra small screens */
+/* @media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+} */
+
+.main{
+    display: flex;
+    justify-content: center; 
+     align-items: center; 
+    gap: 2rem;
+    border: 2px solid green;
+    margin: 2px;
+    padding: 1rem ;
+}
+.box{
+    height: 20px;
+    width: 30px;
+    border: 2px solid red;
+}
+
+
+    </style>
 </head>
 <body>
-    <!-- <script>
 
-        var a=5;
-        var b=10;
-        var c;
-         c=a;
-         a=b;
-         b=c;
-     console.log(a)
-     console.log(b)
-     console.log(c)
-    </script> -->
 
-    <!-- <script>
-        var num1="Dhruval"
-        var num2="chauhan"
-        var num3;
+<div class="main">
+        <div class="box">1 </div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+</div>
+
+
+    <!-- <form action="action_page.php" method="post">
+        <div class="imgcontainer">
+          <img src="img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+      
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+      
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+      
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form> -->
+
+
+
+
+      <!-- ///////////////////////////////////// -->
+      <!-- <form action="action_page.php" style="border:1px solid #ccc">
+        <div class="container">
+          <h1>Sign Up</h1>
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+      
+          <label for="psw-repeat"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      
+          <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+          </label>
+      
+          <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      
+          <div class="clearfix">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <button type="submit" class="signupbtn">Sign Up</button>
+          </div>
+        </div>
+      </form> -->
+  
+
      
-    num3=num1;
-    num1=num2
-    num2;
-
-    console.log(num1)
-    console.log(num2)
-    console.log(num3)
-    </script> -->
-
-
-    <!-- <script>
-        var num1="dhruval"
-
-        {
-            console.log(num1);
-        }
-    </script> -->
-    <!-- <script>
-        let num1="dhruval"
-       
-        {
-            num1="chauhan"
-            console.log(num1)
-          
-        }
-       
-    </script> -->
-
-    <!-- <script>
-        const name="Dhruval"
-        name="chauhan"
-        {
-            console.log(name)
-        }
-    </script> -->
-
-    <!-- <script>
-        var x;
-        console.log(x)
-    </script> -->
-
-    <!-- <script>
-        var name="dhruval"
-
-        {
-            let name="jai"
-            console.log(name)
-        }
-        console.log(name)
-    </script> -->
-
-    <!-- <script>
-        var name="Dhruval"
-        let name="jai"
-        console.log(name)
-
-    </script> -->
-
-
-    <!-- <script>
-        var name="dhruval"
-        {
-            let frd="jai"
-        }
-        console.log(frd)
-    </script> -->
-
-
-    <!-- <script>
-        let name="hello"
-        {
-            var fname="jai"
-            console.log(name)
-        }
-        console.log(fname)
-    </script> -->
-
-    <!-- <script>
-        console.log(name);
-        var name="hello";
-
-    {
-        console.log(fname);
-        var fname="jai";
-    }
-
-    //output :hello   undefine
-    </script> -->
-    
-
-
-<!-- <script>
-     console.log(fname);
-        let fname="jai";
-   //var.html:119 Uncaught ReferenceError: Cannot access 'fname' before initialization
-</script> -->
-
-<script>
-//     let fname="dhruval"
-//     {
-//         const lname="chauhan"
-//         console.log(fname)   
-//     }
-//         console.log(lname)
-// //dhruval
-// //ReferenceError: lname is not defined
-
-
-
-// {
-//     console.log(name)
-//     var name="dhruval"
-
-//     console.log(fname)
-//     let fname="jai"
-
-//     //dhruval
-//     //ReferenceError: Cannot access 'fname' before initialization
-// }
-
-
-
-
-// let fname="dhruval"
-//     {
-//         const lname="chauhan"
-//         console.log(fname,lname)   
-//         console.log(lname)
-//     }
-//         // console.log(lname)
-//         // dhruval chauhan
-//         // chauhan
-
-
-
-// var fname ="hello";
-// console.log(fname)
-// var fname="world"
-
-// var fname="jai"
-// console.log(fname)
-
-
-// hello
-// jai
-
-
-// let valueConst="yesss"
-// const name="dhruval"
-// console.log(name,"hello hello",90,valueConst)
-
-// dhruval hello hello 90 yesss
-
-
-// carName = "Saab";
-// let carName = "Volvo";
-
-// console.log(carName)
-
-// // //ReferenceError: Cannot access 'carName' before initialization
-
-
-// {
-//     let name="dhruval"
-// }
-// {
-//     const fname="chauhan"
-
-// }
-
-// console.log(name)
-// console.log(fname)
-// //dhruval
-// //ReferenceError: fname is not defined
-
-
-//     console.log(a)
-//     var a="dhru"
-// {
-//     let b="hello"
-//     console.log(b)
-// }
-
-
-// console.log(name);
-//     var name="dhruval";
-
-// console.log(fname);
-//     var fname="jai";
-
-
-
-
-
-//     // dhruval
-//     // undefined
-
-
-
-
-
-// {console.log(name);
-//     var name="dhruval";}
-
-// {console.log(lname);
-// var lname=12;}
-
-
-// console.log(name)
-// var name="dhruval"
-
-
-// var a=10;
-//     a=20;
-//     a=30;
-//     a="dhruval"
-
-//     console.log(a)
-//dhruval
-
-
-// var a=10;
-//     b=a;
-//     c=b;
-//     d=c
-
-//     console.log(d)
-//10
-
- 
-//  var hey="dhruval";
-//  console.log(hey)
-
-//  var hey="dhruval12";
-//  console.log(hey)
-
-//  var hey="dhruval34";
-//  console.log(hey)
-
-//  dhruval
-//  dhruval12
-//  dhruval34
-
-
-//  let h1="dhru"
-//  console.log(h1)
-
-//  let h1="dhru"
-//  console.log(h1)
-
-//  //Uncaught SyntaxError: Identifier 'h1' has already been declared
-
-// var HEY=10;
-// console.log(HEY)
-//10
-
-
-// var x;
-// console.log(x)
-
-// //undefined
-
-
-// const name="dhruval"
-// console.log(name)
-// {
-//     const name="dhruval"
-//     name="chauhan"
-// console.log(name)
-// }
-// //dhruval
-// //TypeError: Assignment to constant variable.
-
-
-// console.log(a)
-// var a="helloooo"
-// {
-//     let a="dhruval"
-//     console.log(a)
-// }
-// {
-//     const b="jai"
-//     console.log(b)
-// }
-// console.log(a)
-// // console.log(b)
-
-
-// var a= BigInt(12345678910111213141516171819);
-//     b=a;
-//     c=b;
-//     d=c;
-//     console.log(d)
-
-// {
-//     let a="dhruval"
-// }
-// console.log(a)
-
-
-// var a="dhruval";
-
-// {
-// var a="chauhan"
-// console.log(a)
-// }
-
-// console.log(a)
-
-// var a=5.000000000000007
-// console.log(a)
-
-
-
-
-// console.log(name);
-//     var name="dhruval";
-
-// console.log(fname);
-//     var fname="jai";
-
-// {
-//     var a="dhruval"
-// }
-// console.log(a)
-
-// const a=10
-
-// function dhru()
-// {
-//     // var a="dhruval"
-//     console.log(a)
-    
-// }
-// console.log(a)
-// dhru()
-
-// console.log(a)
-// function abc(){
-//     // console.log(a);
-//     var a=10;
-// }
-
-
-// var abc=10;
-// {
-//     console.log(abc);
-// }
-
-
-
-// console.log(name);
-//     var name="dhruval";
-
-// console.log(fname);
-//     var fname="jai";
-
-// a="dhruval"
-// console.log(a)
-
-
-
-// var n=2;
-// function square(num){
-//     var ans = num * num;
-//     return ans;
-// }
-// var square2 = square(n);
-// var square4 = square(4);
-
-// console.log(n);
-// console.log(square);
-// console.log(square2);
-// console.log(square4);
-
-// console.log(b)
-
-
-// num =5;
-// console.log(num);
-// var num;
-
-// console.log(num)
-// var num=5
-
-</script>
-
 </body>
 </html>
