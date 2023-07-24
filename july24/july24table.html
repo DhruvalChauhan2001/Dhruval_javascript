@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Table</title>
+</head>
+<body>
+  <table id="userTable"  border=3>
+    <tr>
+      <th>Serial Number</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+    </tr>
+  </table>
+</body>
+
+<script>
+    const usersData = [
+  {
+    id: 432,
+    first_name: "Asd",
+    last_name: "paerl",
+    email: "abc@gmail.com",
+    phone: "+919394099203"
+  },
+  {
+    id: 432,
+    first_name: "Asd",
+    last_name: "paerl",
+    email: "abc@gmail.com",
+    phone: "+919394099203"
+  },
+  {
+    id: 342,
+    first_name: "dsf",
+    last_name: "paerl",
+    email: "sdf@gmail.com",
+    phone: "+919394099089"
+  },
+  {
+    id: 765,
+    first_name: "dfgf",
+    last_name: "dfg",
+    email: "muyjgh@gmail.com",
+    phone: "+919394054345"
+  },
+  {
+    id: 123,
+    first_name: "sdxfg",
+    last_name: "gdfd",
+    email: "werrew@gmail.com",
+    phone: "+915464569203"
+  },
+  {
+    id: 123,
+    first_name: "sdxfg",
+    last_name: "gdfd",
+    email: "werrew@gmail.com",
+    phone: "+915464569203"
+  },
+];
+
+function createTable() {
+  const table = document.getElementById('userTable');
+
+  for (let i = 0; i < usersData.length; i++) {
+    const user = usersData[i];
+    const row = table.insertRow();
+
+    const cell1 = row.insertCell();
+    cell1.textContent = i + 1;
+
+    const cell2 = row.insertCell();
+    cell2.textContent = user.first_name;
+
+    const cell3 = row.insertCell();
+    cell3.textContent = user.last_name;
+
+    const cell4 = row.insertCell();
+    cell4.textContent = user.email;
+
+    const cell5 = row.insertCell();
+    cell5.textContent = user.phone;
+  }
+}
+
+createTable();
+
+</script>
+</html>

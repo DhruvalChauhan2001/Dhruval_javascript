@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            overflow: hidden;
+
+        }
+        .main{
+            height: 100vh;
+            width: 100vw;
+        }
+        .row1{
+            display: flex;
+            /* flex-direction: column; */
+            width: 100%;
+            height: 50%;
+            /* border: 2px solid red; */
+        }
+        .mainbox1{
+            width: 50%;
+            background-color: rgb(130, 124, 136);
+        }
+        .mainbox2{
+            /* display: flex; */
+            width: 50%;
+            /* background-color: brown; */
+        }
+        .box2{
+            height: 50%;
+            width: 100%;
+            background-color: aqua;
+        }
+        .box34{
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            width: 100%;
+        }
+        .box3{
+            height: 50%;
+            width: 50%;
+            background-color: blueviolet;
+        }
+        .box4{
+            height: 50%;
+            width: 50%;
+            background-color: rgb(47, 157, 197);
+        }
+
+        .box56{
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .row2{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+            /* border: 2px solid red; */
+            /* background-color: aquamarine; */
+        }
+       
+        .box56{
+            display: flex;
+            flex-direction: row;
+            height: 50%;
+            width:50%;
+            /* border: 2px solid green; */
+        }
+
+        .box5{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            /* background-color: chartreuse; */
+        }
+        .boxa{
+            height: 100%;
+            
+            background-color: blueviolet;
+        }
+        .boxb{
+            height: 100%;
+            background-color: blue;
+        }
+        .box6{
+            height: 100%;
+            width: 100%;
+            background-color: black;
+        }
+        .box7{
+            background-color: chocolate;
+        }
+        div{
+            margin: 2px;
+        }
+        
+
+        @media only screen and (max-width: 600px) {
+        
+        .row1{
+            display: flex;
+            flex-direction: column;
+        }
+       .mainbox1{
+        height: 100%;
+        width: 100%;
+        background-color: cadetblue;
+       }
+       .mainbox2{
+        height: 100%;
+        width: 100%;
+        background-color: rgb(172, 185, 185);
+       }
+       .box2{
+        height: 100%;
+        width: 100%;
+        background-color: blueviolet;
+       }
+       .box3{
+        height: 100%;
+        width: 100%;
+        background-color: rgb(102, 88, 116);
+       }
+       .box4{
+        height: 100%;
+        width: 100%;
+        background-color: rgb(69, 54, 83);
+       }
+
+       .row2{
+        display: flex;
+        flex-direction: column;
+       }
+}
+    </style>
+</head>
+
+<body>
+        <div class="main">
+            <div class="row1">
+                <div class="mainbox1"></div>
+                <div class="mainbox2">
+                    <div class="box2"></div>
+                    <div class="box34">
+                        <div class="box3"></div>
+                        <div class="box4"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row2">
+                <div class="box56">
+                    <div class="box5">
+                        <div class="boxa"></div>
+                        <div class="boxb"></div>
+                    </div>
+                    <div class="box6"></div>
+                </div>
+                <div class="box56 box7"></div>
+            </div>
+        </div>
+
+        
+</body>
+
+</html>

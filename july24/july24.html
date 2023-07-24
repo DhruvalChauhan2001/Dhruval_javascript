@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div>
+            <h1 id="raj" class="jai">Dom lerning <span> chai our code</span> </h1>
+            <h3 id="raj" class="jai">Chai our code </h3>
+        </div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+
+
+        <div>
+            <h2 class="hai">hai1</h2>
+            <h2 class="hai">hai2</h2>
+            <h2 class="hai">hai3</h2>
+            <h2 class="hai">hai4</h2>
+        </div>
+</body>
+
+    <script>
+        const a=document.getElementById("raj")
+                a.classList.add("haiii")
+                a.classList.remove("jai")
+                a.style.backgroundColor="green"
+                a.style.padding="2rem"
+               
+        console.log(a)
+
+        const abc=document.getElementsByClassName("jai")
+                // a.classList.add("haiii")
+                // a.classList.remove("jai")
+                // a.style.backgroundColor="green"
+                // a.style.padding="2rem"
+
+
+               
+        console.log(abc)
+
+
+
+        const b=document.getElementsByClassName("jai")
+        console.log(b)
+
+        const c=document.querySelectorAll(".jai")
+        console.log(c)
+
+        const d=document.querySelector(".jai")
+        console.log(d)
+
+
+        const ullist=document.querySelector("ul")
+        console.log(ullist)
+
+        const list=document.querySelector("li")
+                list.style.backgroundColor="yellow"
+                list.innerText
+        console.log(list)
+
+
+        const listall=document.querySelectorAll("li")
+        // listall.style.backgroundColor="red"
+        listall.forEach((val)=>val.style.backgroundColor="green")
+        console.log(listall)
+
+
+        const claslist=document.querySelectorAll("h2")
+        claslist.forEach((lv)=>lv.style.backgroundColor="orange")
+
+        // console.log(claslist)
+
+
+        // const arr=Array(claslist)
+        // claslist.forEach((lv)=>{ lv.style.backgroundColor="red"  })
+
+
+        const create=document.createElement("h6")
+                create.classList="jailo"
+                // create.className="haihai"
+
+                create.innerHTML="jio";
+                // create.id="myid"
+                create.id= Math.round(Math.random()*10 +1)
+                create.setAttribute("title","genrate title")
+                create.style.backgroundColor="orange"
+                create.style.padding="2rem"
+        console.log(create)
+
+        document.body.appendChild(create)
+
+    </script>
+</html>

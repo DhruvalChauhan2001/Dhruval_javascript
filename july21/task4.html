@@ -28,14 +28,22 @@
         
         <input type="text" id="passwordInput" >
         
-       <div> <input type="checkbox" id="uppercaseCheckbox" onclick="generatePassword()"> Uppercase</div>
+       <div> <input type="checkbox" id="uppercaseCheckbox" > Uppercase</div>
         
-        <div> <input type="checkbox" id="lowercaseCheckbox" onclick="generatePassword()"> Lowercase</div>
+        <div> <input type="checkbox" id="lowercaseCheckbox" > Lowercase</div>
 
-        <div> <input type="checkbox" id="digitbox" onclick="generatePassword()"> Digit </div>
+        <div> <input type="checkbox" id="digitbox" > Digit </div>
 
-        <div> <input type="checkbox" id="specilcher" onclick="generatePassword()"> Special characters </div>
+        <div> <input type="checkbox" id="specilcher"> Special characters </div>
+
+        <div>   <label for="passwordLength">Password Length:</label>
+            <input type="number" id="passwordLength" min="8" max="12" value="12">
+            <br>
+        </div>
     
+
+        <div><button onclick="removePassword()">Remove Password</button></div>
+
         <button id="generateBtn" onclick="generatePassword()">Generate Password</button>
 
         
@@ -44,11 +52,12 @@
 
 <script>
   function generatePassword() {
-  const length = 12; // Change the length of the password as desired
+//   const length = 12; // Change the length of the password as desired
   const charsetUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const charsetLowercase = "abcdefghijklmnopqrstuvwxyz";
   const digit=1234567890;
   const specilcherer= "!@#$%^&*()+?><?{}:";
+  const lengthInput = document.getElementById('passwordLength');
 
   let charset = "";
   
@@ -56,6 +65,8 @@
   const lowercaseCheckbox = document.getElementById('lowercaseCheckbox');
   const digitbox=document.getElementById("digitbox")
   const spelbox =document.getElementById("specilcher")
+  const length =lengthInput.value
+
 
   const passwordInput = document.getElementById('passwordInput');
   
@@ -85,5 +96,9 @@
   passwordInput.value = password;
 }
 
+
+function removePassword() {
+  document.getElementById('passwordInput').value = '';
+}
 </script>
 </html>

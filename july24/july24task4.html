@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr >
+            <th>ID</th>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>E-mail</th>
+            <th>Phone</th>
+        </tr>
+    </table>
+    <tbody id="mytable"></tbody>
+</body>
+
+    <script>
+
+const usersData = [
+  {
+    id: 432,
+    first_name: "Asd",
+    last_name: "paerl",
+    email: "abc@gmail.com",
+    phone: "+919394099203"
+  },
+  {
+    id: 342,
+    first_name: "dsf",
+    last_name: "paerl",
+    email: "sdf@gmail.com",
+    phone: "+919394099089"
+  },
+  {
+    id: 765,
+    first_name: "dfgf",
+    last_name: "dfg",
+    email: "muyjgh@gmail.com",
+    phone: "+919394054345"
+  },
+  {
+    id: 123,
+    first_name: "sdxfg",
+    last_name: "gdfd",
+    email: "werrew@gmail.com",
+    phone: "+915464569203"
+  },
+]
+
+buildtable(usersData)
+function buildtable(data){
+    var table =document.getElementById("mytable")
+
+    for(var i=0;i<data.length;i++){
+        var row = `<tr>
+                        <td>${data[i].id}</td>
+                        <td>${data[i].first_name}</td>
+                        <td>${data[i].last_name}</td>
+                        <td>${data[i].email}</td>
+                        <td>${data[i].phone}</td>
+                    
+
+                    </tr>`
+
+            table.innerHTML += row
+    }
+}
+
+
+
+    </script>
+</html>
