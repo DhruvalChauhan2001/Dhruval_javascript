@@ -1,11 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<title>3D Digital Clock</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+
+.clock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  perspective: 1000;
+}
+
+.hour,
+.minute,
+.second {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  color: #fff;
+  text-align: center;
+}
+
+.hour {
+  z-index: 1;
+  position: absolute;
+  left: 37rem;
+ 
+}
+
+.minute {
+  z-index: 2;
+  margin: auto;
+ 
+}
+
+.second {
+  z-index: 3;
+  position: absolute;
+  /* padding: 2rem; */
+  margin-left: 12rem;
+}
+</style>
 </head>
 <body>
-    
+<div class="clock">
+  <div class="hour">00</div>
+  <div class="minute">00</div>
+  <div class="second">00</div>
+</div>
+<script>
+const clock = function() {
+  const dateNow = new Date();
+  const hour = dateNow.getHours();
+  const minute = dateNow.getMinutes();
+  const second = dateNow.getSeconds();
+
+  document.querySelector(".hour").textContent = hour;
+  document.querySelector(".minute").textContent = minute;
+  document.querySelector(".second").textContent = second;
+};
+
+setInterval(clock, 1000);
+</script>
 </body>
 </html>
