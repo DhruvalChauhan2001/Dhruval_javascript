@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input{
+            /* padding:1rem; */
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task List</h1>
+    <form action="" id="newtaskform">
+        <input type="text" id="newtaskinput">
+        <input type="submit" id="newtasksubmit">
+    </form>
+    <main>
+        <section>
+            <!-- <h2>Task</h2> -->
+            <div id="tasks">
+                <!-- <div class="task">
+                    <input type="text" class="text">
+                </div>
+                <div class="action">
+                    <button class="Edit">Edit</button>
+                    <button class="Delete"> Delete</button>
+                </div> -->
+
+            </div>
+        </section>
+    </main>
+</body>
+
+<script>
+    window.addEventListener("load",()=>{
+        const form =document.getElementById("newtaskform")
+        const input=document.getElementById("newtaskinput")
+        const listel=document.getElementById("tasks")
+
+
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault();
+
+            const task = input.value;
+
+            if(!task){
+                alert("please fill out the task")
+                return;
+            }
+            const taskel =document.createElement("div");
+            taskel.classList.add("task");
+
+            const taskcontentel = document.createElement("div")
+            taskcontentel.classList.add("content");
+            
+
+            taskel.appendChild(taskcontentel)
+
+            const taskinputel = document.createElement("input")
+            taskinputel.classList.add("text")
+            taskinputel.type="text"
+            taskinputel.value=task;
+            taskinputel.setAttribute("readonly","readonly")
+
+            taskcontentel.appendChild(taskinputel)
+
+            const taskactionel =document.createElement("div");
+            taskactionel.classList.add("actions")
+
+            const taskeditel =document.createElement("button")
+            taskeditel.classList.add("edit")
+            taskeditel.innerHTML="Edit"
+
+            const taskdelateel = document.createElement("button")
+            taskdelateel.classList.add("delete")
+            taskdelateel.innerHTML ="Delete"
+
+            taskactionel.appendChild(taskeditel)
+            taskactionel.appendChild(taskdelateel)
+
+            taskel.appendChild(taskactionel)
+
+            listel.appendChild(taskel)
+
+            input.value=""
+
+            taskeditel.addEventListener("click",()=>{
+                if(taskeditel.innerText.toLocaleLowerCase()=="edit"){
+                    taskinputel.removeAttribute("readonly");
+                    taskinputel.focus();
+                    taskeditel.innerText ="Save"
+                }
+                else{
+                    taskinputel.setAttribute("readonly","readonly")
+                    taskeditel.innerText="Edit"
+                }
+            })
+
+            taskdelateel.addEventListener("click",()=>{
+                listel.removeChild(taskel)
+            })
+        })
+    })
+</script>
+</html>

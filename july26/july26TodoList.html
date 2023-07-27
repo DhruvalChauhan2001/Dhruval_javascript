@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TOdo List</h1>
+    <div class="container">
+        <input type="text" id="inputField">
+        <button id="addTodo">+</button>
+        <div class="todos" id="todocontainer"></div>
+    </div>
+</body>
+
+<script>
+    let inputfild = document.getElementById("inputField")
+    let addtodobutton = document.getElementById("addTodo")
+    let todocontainer =document.getElementById("todocontainer")
+   
+
+    addtodobutton.addEventListener("click",function(){
+        var peragraph = document.createElement("p")
+        peragraph.innerText = inputfild.value;
+        todocontainer.appendChild(peragraph);
+        
+        inputfild.value ="";
+        peragraph.addEventListener("click",function(){
+            peragraph.style.textDecoration ="line-through";
+        })
+
+        peragraph.addEventListener("dblclick",function(){
+            todocontainer.removeChild(peragraph);
+        })
+    })
+
+</script>
+</html>

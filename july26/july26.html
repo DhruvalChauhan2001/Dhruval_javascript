@@ -5,7 +5,250 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <!DOCTYPE html>
+    <html>
+   
+    <body>
+
+        <input id="inputData" type="text">
+        <button onclick="storeData()">Click Here</button>
+        <div id="confirmation"></div>
+
+    <!-- 2 -->
+    <!-- <input id="inputid" type="text">
+    <div>
+    <button id="buttonid">Click Here</button>
+    </div>
+    <div id="dataDiv"></div>  -->
     
-</body>
+
+    <!-- <input type="text" id="inputone">
+    <button id="buttonone">Click Here</button>
+    <div id="datadiv" onclick="userinput()"></div>
+    <div id="demo"></div> -->
+
+    <!-- <div id="test">click me</div> -->
+    <!-- <div class="items">
+        <input type="" name="" id="keywordSearch1" placeholder="">
+        <button onclick="onClick()">button1</button>
+      </div> -->
+
+
+      <!-- <input type="text" id="inputdata">
+      <button onclick="demodunction()">Click Here</button>
+      <div id="target"></div> -->
+
+      
+      <!-- <input type="text" id="inputData">
+    <button id="confirmButton">Confirm</button>
+    <div id="dataContainer"></div> -->
+
+  <!-- <input id="inputid" type="text">
+  <div><button onclick="displayConfirmation()">Click Here</button></div>
+  <div id="jai">Include here</div> -->
+
+  <!-- <input id="inputData" type="text">
+  <button onclick="storeData()">Store Data</button>
+  <div id="confirmation"></div> -->
+<!-- 
+  <input id="inputData" type="text">
+  <button onclick="storeData()">Store Data</button>
+
+  <div id="dynamicDivs"></div> -->
+
+
+    </body>
+    </html>
+
+<script>
+
+function storeData() {
+  const input = document.getElementById('inputData').value.trim();
+        // input !== ''
+
+  
+  if (  input.length >= 3) {
+    const confirmMessage = input;
+    if (confirm(confirmMessage)) {
+      createDynamicDiv(input);
+    }
+  } else {
+    alert('enter data');
+  }
+
+}
+
+function createDynamicDiv(data) {
+  const div = document.createElement('div');
+  div.textContent = data;
+  div.classList.add('dynamic-div');
+
+  const confirmationDiv = document.getElementById('confirmation');
+  confirmationDiv.appendChild(div);
+}
+
+
+
+    ///2
+    // const inputField = document.getElementById('inputid');
+    // const storeButton = document.getElementById('buttonid');
+    // const dataDiv = document.getElementById('dataDiv');
+    
+    
+
+   
+
+    // storeButton.addEventListener('click', () => {
+    // const inputData = inputField.value.trim();
+    
+
+    // if (inputData !== '') {
+    // const confirmation = confirm('store data?');
+
+    // if (confirmation) {
+    //   dataDiv.textContent = inputData;
+    //     }
+
+    // }
+    // });
+
+
+    
+        ///////////////////
+
+        // const dataDiv = document.createElement('div');
+        // dataDiv.textContent = dataValue;
+        // dataContainer.appendChild(dataDiv);
+        // inputData.value = '';
+
+
+
+    // function userinput(){
+    //     const textone = document.getElementById("nputone").value;
+    //     document.getElementById("demo").innerHTML= textone
+
+       
+    // }
+
+    // var div = document.getElementById("test");
+    // div.something = "hidden value";
+    
+    // div.addEventListener("click", function() {
+    //     alert(this.something);
+    // });
+
+    // function onClick(elem) {
+    // var $this = elem.tagName;
+    // var val = $this.siblings('input[type=text]').val();
+    // if (val == '') {
+    // console.log('no input');
+    // } else {
+    // console.log(val);
+    // }
+    // }
+
+
+//     function getVal() {
+//   const val = document.querySelector('input').value;
+//   console.log(val);
+// }
+
+    
+    // function demodunction(){
+    //     const finaldat =document.getElementById("inputdata").value;
+    //     document.getElementById("target").innerHTML=finaldat
+    // }
+
+    // const confirmButton = document.getElementById('confirmButton');
+    // const inputData = document.getElementById('inputData');
+    // const dataContainer = document.getElementById('dataContainer');
+
+    // confirmButton.addEventListener('click', () => {
+    // const dataValue = inputData.value.trim();
+  
+    // if (dataValue !== '') {
+    // const dataDiv = document.createElement('div');
+    // dataDiv.textContent = dataValue;
+    // dataContainer.appendChild(dataDiv);
+    // inputData.value = '';
+    // }
+    // });
+
+
+//     function displayConfirmation() {
+//   const input = document.getElementById('inputid').value.toLowerCase().trim();
+//   const jaiDiv = document.getElementById('jai');
+
+//   if (input === 'yes') {
+//     jaiDiv.textContent = 'Include here - YES';
+//     jaiDiv.style.color = 'green';
+//   } else if (input === 'no') {
+//     jaiDiv.textContent = 'Include here - NO';
+//     jaiDiv.style.color = 'red';
+//   } else {
+//     jaiDiv.textContent = 'Invalid input. Please enter "yes" or "no".';
+//     jaiDiv.style.color = 'black';
+//   }
+// }
+
+// function storeData() {
+//   const input = document.getElementById('inputData').value.trim();
+
+//   if (input !== '') {
+//     const confirmMessage = `Do you want to store "${input}"?`;
+//     if (confirm(confirmMessage)) {
+//       // Store the data here, e.g., in an array, local storage, or a server
+//       // For this example, we'll just display the confirmation
+//       displayConfirmation(input);
+//     }
+//   } else {
+//     alert('Please enter some data before storing.');
+//   }
+// }
+
+// function displayConfirmation(data) {
+//   const confirmationDiv = document.getElementById('confirmation');
+//   confirmationDiv.textContent = data;
+//   confirmationDiv.style.color = 'green';
+// }
+
+
+////////////////
+// function storeData() {
+//   const input = document.getElementById('inputData').value.trim();
+
+//   if (input.length > 3) {
+//     const confirmMessage = `Do you want to store "${input}"?`;
+//     if (confirm(confirmMessage)) {
+//       // Store the data and create a dynamic div here
+//       createDynamicDiv(input);
+//     }
+//   } else {
+//     alert('Please enter at least 4 characters before storing.');
+//   }
+// }
+
+// function createDynamicDiv(data) {
+//   const dynamicDivsContainer = document.getElementById('dynamicDivs');
+
+//   const dynamicDiv = document.createElement('div');
+//   dynamicDiv.textContent = data;
+
+//   const deleteButton = document.createElement('button');
+//   deleteButton.textContent = 'Delete';
+//   deleteButton.addEventListener('click', function() {
+//     if (confirm('Do you want to delete this data?')) {
+//       dynamicDivsContainer.removeChild(dynamicDiv);
+//     }
+//   });
+
+//   dynamicDiv.appendChild(deleteButton);
+//   dynamicDivsContainer.appendChild(dynamicDiv);
+// }
+
+
+
+</script>
 </html>

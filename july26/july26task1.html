@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputData" type="text">
+    <button onclick="storeData()">Store Data</button>
+  
+    <div id="dynamicDivs"></div>
+</body>
+
+    <script>
+        function storeData() {
+  const input = document.getElementById('inputData').value.trim();
+
+  if (input.length >= 3) {
+    const confirmMessage = `Do you want to store "${input}"?`;
+    if (confirm(confirmMessage)) {
+      // Store the data and create a dynamic div here
+      createDynamicDiv(input);
+    }
+  } else {
+    alert('enter data');
+  }
+}
+
+function createDynamicDiv(data) {
+  const dynamicDivsContainer = document.getElementById('dynamicDivs');
+
+  const dynamicDiv = document.createElement('div');
+  dynamicDiv.textContent = data;
+
+  const deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Delete';
+  deleteButton.addEventListener('click', function() {
+    // if (confirm('Do you want to delete this data?')) {
+      dynamicDivsContainer.removeChild(dynamicDiv);
+    // }
+  });
+
+  dynamicDiv.appendChild(deleteButton);
+  dynamicDivsContainer.appendChild(dynamicDiv);
+}
+    </script>
+</html>
