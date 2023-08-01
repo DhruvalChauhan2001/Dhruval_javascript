@@ -6,6 +6,134 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <table>
+        <tr>
+            <td>
+                <form action="" onsubmit="onFormSubmit()">
+                    <div>
+                        <label for="productcode">Product Code</label>
+                        <input type="text" name="productcode" id="productcode">
+                    </div>
+
+                    <div>
+                        <label for="product">Product Name</label>
+                        <input type="text" name="product" id="product">
+                    </div>
+
+                    <div>
+                        <label for="qty">Qty</label>
+                        <input type="text" name="qty" id="qty">
+                    </div>
+
+                    <div>
+                        <label for="perprice">Per Price</label>
+                        <input type="text" name="perprice" id="perprice">
+                    </div>
+
+                    <div>
+                        <input type="submit" value="submit">
+                        <input type="reset" value="reset">
+                    </div>
+                </form>
+
+                <td>
+                    <table id="storeList" border="4">
+                        <thead>
+                            <tr>
+                                <th>Product Code</th>
+                                <th>Product Name</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </td>
+            </td>
+        </tr>
+    </table>
 </body>
+
+    <script>
+
+    var selectRow=null
+    function onFormSubmit(){
+        event.preventDefault();
+        var formdata = readFormData()
+        if(selectRow === null){
+            insertNewRecode(formdata)
+        }
+        else{
+            updateRecord(formdata)
+        }
+        resetForm()
+    }
+
+    function readFormData(){
+        var formdata ={}
+        formdata["productcode"] = document.getElementById("productcode").value
+        formdata["product"] = document.getElementById("product").value
+        formdata["qty"] = document.getElementById("qty").value
+        formdata["perprice"] = document.getElementById("perprice").value
+        return formdata;
+    }
+
+
+    //insert data
+    function insertNewRecode(data){
+        var table =document.getElementById("storeList").getElementsByTagName("tbody")[0]
+        var newRow = table.insertRow(table.length)
+
+        var cell1 = newRow.insertCell(0)
+            cell1.innerHTML =data.productcode;
+        var cell2 = newRow.insertCell(1)
+            cell2.innerHTML =data.product;
+        var cell3 = newRow.insertCell(2)
+            cell3.innerHTML =data.qty;
+        var cell4 = newRow.insertCell(3)
+            cell4.innerHTML =data.perprice;
+
+        var cell5 = newRow.insertCell(4)
+            cell5.innerHTML =`<button onClick="OnEdit(this)">Edit</button>  <button onClick="onDelete(this)">Delate</button>`
+    }
+
+
+    //Edit
+    function OnEdit(td){
+        selectRow = td.parentElement.parentElement;
+        document.getElementById("productcode").value=selectRow.cells[0].innerHTML
+        document.getElementById("product").value=selectRow.cells[1].innerHTML
+        document.getElementById("qty").value=selectRow.cells[2].innerHTML
+        document.getElementById("perprice").value=selectRow.cells[3].innerHTML
+    
+    }
+    function updateRecord(formdata){
+        selectRow.cells[0].innerHTML = formdata.productcode;
+        selectRow.cells[1].innerHTML = formdata.product;
+        selectRow.cells[2].innerHTML = formdata.qty;
+        selectRow.cells[3].innerHTML = formdata.perprice;
+
+    }
+
+    //delate data
+    function onDelete(td){
+        if(confirm(`Do You Want To Delete`)){
+            row = td.parentElement.parentElement;
+            document.getElementById("storeList").deleteRow(row.rowIndex )
+        }
+        resetForm()
+    }
+
+    //reset data
+    function resetForm(){
+        document.getElementById("productcode").value = "";
+        document.getElementById("product").value = "";
+        document.getElementById("qty").value = "";
+        document.getElementById("perprice").value = "";
+    }
+
+
+    </script>
 </html>

@@ -10,16 +10,19 @@
     <button onclick="storeData()">Store Data</button>
   
     <div id="dynamicDivs"></div>
+
 </body>
 
     <script>
-        function storeData() {
+
+  function storeData() {
   const input = document.getElementById('inputData').value.trim();
 
   if (input.length >= 3) {
-    const confirmMessage = `Do you want to store "${input}"?`;
+    const confirmMessage = input;
     if (confirm(confirmMessage)) {
-      // Store the data and create a dynamic div here
+      
+        
       createDynamicDiv(input);
     }
   } else {
@@ -30,8 +33,10 @@
 function createDynamicDiv(data) {
   const dynamicDivsContainer = document.getElementById('dynamicDivs');
 
+
   const dynamicDiv = document.createElement('div');
   dynamicDiv.textContent = data;
+
 
   const deleteButton = document.createElement('button');
   deleteButton.textContent = 'Delete';

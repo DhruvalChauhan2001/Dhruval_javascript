@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            overflow: hidden;
+            
+        }
+        .main{
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            /* background-color: aqua; */
+
+        }
+        .box1{
+            height: 100%;
+            width: 100%;
+            /* background-color:  red; */
+        }
+        .box2{
+            height: 100%;
+            width: 100%;
+            padding: 3rem;
+            /* background-color:  yellowgreen; */
+            /* border-left: 1px solid gray; */
+        }
+        .boxmain1{
+            height: 100%;
+            width: 100%;
+            /* background-color: aqua; */
+            /* margin: 2rem; */
+            padding: 2rem;
+            /* border: 1px solid red; */
+            border-right: 1px solid gray;
+        
+        }
+        .imgdiv{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+
+        }
+        .manage{
+            display: flex;
+            width: 85%;
+            flex-direction: column;
+            /* justify-content: space-between; */
+        }
+        .date{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            height: 20%;
+            width: 100%;
+            /* background-color: aquamarine; */
+            /* border: 1px solid red; */
+            margin-top: 1rem;
+        }
+        h2{
+            font-size: 22px;
+            margin-bottom:20px;
+        }
+        .divdh{
+            height: 70%;
+            width: 30%;
+            background-color: gray;
+            /* border: 1px solid red; */
+            border-radius: 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            border-radius: 20px;
+        }
+        .scu{
+            margin-top: 20px;
+            color:  gray;
+        }
+        .btn1{
+            border-radius: 25px;
+            height: 35px;
+            width: 90px;
+        }
+        .boxdetail{
+          display: flex;
+          justify-content: space-between;
+
+        }
+       
+        .boxdetail{
+            /* background-color: aqua; */
+            margin: 1rem;
+           
+        }
+        .boxl{
+            background-color: bisque;
+            /* margin: 5rem; */
+            /* margin-left: 5rem; */
+            margin-right: 15rem;
+            border-radius: 25px;
+        }
+        .total{
+            border-top: 2px solid gray;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box1">
+            <div class="boxmain1">
+                <h2>Summary</h2>
+                <h3 class="scu">Booking details</h3>
+                <div class="imgdiv">
+                    <div class="img">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/14/04/45/elephant-1822636_1280.jpg" alt="" height="90px" width="90" >
+                    </div>
+                    <div class="manage">
+                        <h2>MAnage PCON HOLISTIC PROGrAM</h2>
+                        <div><button class="btn1">PCOS</button></div>
+                    </div>
+                </div>
+
+                <h3 class="scu">SCHEDUAL ON</h3> 
+                    <div class="date">
+                        <div class="divdh">
+                            <div class="date1">
+                            <h3>Date</h3>
+                            <h3>10-07-2023</h3>
+                        </div>
+                    </div>
+                        <div class="divdh">
+                            <div class="date1">
+                                <h3>Time</h3>
+                                <h3>04:30pm</h3>
+                            </div>
+                        </div>
+                        <div class="divdh">
+                            <div class="date1">
+                                <h3>Duration</h3>
+                                <h3>30min.</h3>
+                            </div>
+                        </div>
+                    
+                    </div>
+            </div>
+        </div>
+        <!-- <div class="box2"> -->
+
+            <div class="box2">
+                <div class="secondbox">
+                    <h2>Promo code</h2>
+                    <div>
+                        <input type="text" id="promoCodeInput" placeholder="Enter promo code">
+                        <button onclick="applyPromoCode()">Apply</button>
+                        <p id="message"></p>
+                    </div>
+            
+                    <!-- Input field for entering the amount -->
+                    <h2>Enter Amount</h2>
+                    <div>
+                        <input type="number" id="amountInput" placeholder="Enter amount">
+                    </div>
+            
+                    <h2>Payment Details</h2>
+                    <div class="boxl">
+                        <div class="boxdetail">
+                            <h3>Plan</h3>
+                            <h3>Consultaion</h3>
+                        </div>
+                        <div class="boxdetail">
+                            <h3>GST(18%)</h3>
+                            <h3 id="gstAmount">$0</h3>
+                        </div>
+                        <div class="boxdetail">
+                            <h3>summary</h3>
+                            <h3 id="summaryAmount">$0</h3>
+                        </div>
+                        <div class="boxdetail total">
+                            <h3>Total</h3>
+                            <h3 id="totalAmount">$0</h3>
+                        </div>
+                    </div>
+            
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odit veritatis nesciunt! Error, nesciunt! Magnam</p>
+            
+                    <div class="totaldiv">
+                        <h3>Total</h3>
+                        <button onclick="payNow()">Pay Now</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- </div> -->
+        <!-- </div> -->
+    </div>
+</body>
+
+     <script>
+    function applyPromoCode() {
+        const promoCodeInput = document.getElementById("promoCodeInput").value;
+        let summaryAmount = parseFloat(document.getElementById("amountInput").value) || 0; // Get the amount from the input field
+        let discount = 0;
+
+        // Check the promo code and apply the corresponding discount
+        switch (promoCodeInput) {
+            case "off20":
+                discount = summaryAmount * 0.2;
+                break;
+            case "off30":
+                discount = summaryAmount * 0.3;
+                break;
+            case "off40":
+                discount = summaryAmount * 0.4;
+                break;
+            default:
+                // Invalid promo code
+                document.getElementById("message").textContent = "Invalid promo code";
+                return;
+        }
+
+        // Calculate the new total amount after applying the discount
+        let totalAmount = summaryAmount - discount;
+
+        // Calculate GST at 18%
+        const gstAmount = totalAmount * 0.18;
+
+        // Update the displayed amounts
+        document.getElementById("message").textContent = `Applied ${promoCodeInput} promo code: -$${discount.toFixed(2)}`;
+        document.getElementById("summaryAmount").textContent = `$${summaryAmount.toFixed(2)}`;
+        document.getElementById("totalAmount").textContent = `$${totalAmount.toFixed(2)}`;
+        document.getElementById("gstAmount").textContent = `$${gstAmount.toFixed(2)}`;
+    }
+
+    function payNow() {
+        // Implement your payment processing logic here
+        // This function will be triggered when the "Pay Now" button is clicked
+        // You can redirect the user to a payment gateway or perform any other necessary actions.
+        console.log("Payment processing logic goes here.");
+    }
+</script>
+
+   
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operations</title>
+</head>
+<body>
+    <h2>CRUD Operations</h2>
+
+    <input id="inputData" type="text" placeholder="Enter data">
+    <button onclick="createData()">Create</button>
+    <button onclick="readData()">Read</button>
+    <button onclick="updateData()">Update</button>
+    <button onclick="deleteData()">Delete</button>
+
+    <ul id="dataList"></ul>
+
+</body>
+
+    <script>
+        const dataList = document.getElementById('dataList');
+        let dataItems = [];
+
+function createData() {
+  const input = document.getElementById('inputData').value.trim();
+
+  if (input.length >= 3) {
+    dataItems.push(input);
+    displayData();
+  } else {
+    alert('Enter at least 3 characters.');
+  }
+}
+
+function displayData() {
+  dataList.innerHTML = '';
+  dataItems.forEach(data => {
+    const listItem = document.createElement('li');
+    listItem.textContent = data;
+    dataList.appendChild(listItem);
+  });
+}
+
+function readData() {
+  if (dataItems.length === 0) {
+    alert('No data to read.');
+  } else {
+    alert('Data: ' + dataItems.join(', '));
+  }
+}
+
+function updateData() {
+  const index = prompt('Enter the index of the item to update:');
+  if (index !== null && !isNaN(index) && index >= 0 && index < dataItems.length) {
+    const newData = prompt('Enter the new data:');
+    if (newData !== null && newData.trim().length >= 3) {
+      dataItems[index] = newData;
+      displayData();
+    } else {
+      alert('Please enter valid data (at least 3 characters).');
+    }
+  } else {
+    alert('Please enter a valid index.');
+  }
+}
+
+function deleteData() {
+  const index = prompt('Enter the index of the item to delete:');
+  if (index !== null && !isNaN(index) && index >= 0 && index < dataItems.length) {
+    dataItems.splice(index, 1);
+    displayData();
+  } else {
+    alert('Please enter a valid index.');
+  }
+}
+
+    </script>
+</html>

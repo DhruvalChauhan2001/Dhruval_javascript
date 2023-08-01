@@ -39,3 +39,25 @@
 
 
 
+// const a= [1,2,3,4,5]
+// const b= a
+
+// console.log(a==b)
+
+// const a=2
+// const b=2
+
+// console.log(a==b)
+
+
+// let arr =[1,1,1,1,2,3,4,5,6,888,888,67,67,4,4,2,1,30,60,20,20]
+
+// let uniq= [...new Set(arr)]
+// console.log(uniq)
+
+// const revint =(num)=>{
+//     let mynum =num.toString().split("").reverse().join("")
+//     console.log(mynum)
+// }
+
+// revint(12345)
