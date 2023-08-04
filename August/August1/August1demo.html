@@ -7,27 +7,39 @@
 </head>
 <body>
     <input type="number" placeholder="Enter Amount" value="" id="Amount">
-    <input type="text" placeholder="Promo Code" value="" disabled  id="promocode">
+    <input type="text" placeholder="Promo Code" value=""   id="promocode">
     <input type="button" value="Check" disabled id="button">
 </body>
 
     <script>
     const Amount = document.getElementById("Amount")
     const Promo = document.getElementById("promocode")
-    const button = document.getElementById("button")
+    const btn = document.getElementById("button")
 
     Amount.addEventListener("input",function(){
         if(Amount.value<500){
-            Promo.setAttribute("disabled","")
-            button.setAttribute("disabled","")
+            // Promo.setAttribute("disabled","")
+            btn.setAttribute("disabled","")
 
         }
         if(Amount.value>=500 || Amount.value >=1000 || Amount.value>=1500){
-            Promo.removeAttribute("disabled");
-            button.setAttribute("disabled");
+            // Promo.removeAttribute("disabled");
+            btn.removeAttribute("disabled");
+            checking()()
         }
         
     })
+
+    function checking(){
+        var a=0;
+        var b=1;
+        if(val =="off20"){
+            
+        }
+        
+    }
+    
+
 
 
     </script>

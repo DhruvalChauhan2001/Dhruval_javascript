@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            /* overflow: hidden; */
+            box-sizing: border-box;
+           
+        }
+        .canvas{
+            display: flex;
+            justify-content: center;
+            
+            height: 40vh;
+            width: 100vw;
+        }
+        .button{
+            height: 20%;
+            width: 10%;
+            border: 1px solid red;
+            margin-top: 2rem;
+            margin-right: 1rem;
+        }
+        .second{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Color Scheme Switcher</h1>
+    <div class="canvas">
+    <span class="button" id="grey" style="background-color: grey;"></span>
+    <span class="button" id="white" style="background-color: white;" ></span>
+    <span class="button" id="blue" style="background-color: blue;"></span>
+    <span class="button" id="yellow" style="background-color: yellow;"></span>
+    </div>
+
+    <div>
+        <div class="second">
+    <form action="">
+        <h2>BMI Calculeter</h2>
+        <p><label for="">Height in CM:-</label><input type="text" id="height"></p>
+        <p><label for="">Weight in CM:-</label><input type="text" id="Weight"></p>
+        <button>Calculeter</button>
+        <div id="results"></div>
+        <div id="bmig"></div>
+        <div id="weight-guide">
+            <br>
+            <h2> BMI Weighat guide</h2>
+            <h4>Under Weighat = Less than 18.6</h4>
+            <h4>Normal Range = 18.6 and 24.9</h4>
+            <h4>Over Weight = greater than 24.9</h4>
+        </div>
+
+    </form>
+</div>
+</div>
+</body>
+    <script>
+      const buttons = document.querySelectorAll(".button")
+      const body = document.querySelector("body")
+
+      buttons.forEach((button)=>{
+        console.log(button)
+        button.addEventListener("click",function(e){
+            console.log(e)
+            console.log(e.target)
+            if(e.target.id ==="grey"){
+                body.style.backgroundColor=e.target.id
+            }
+            if(e.target.id ==="white"){
+                body.style.backgroundColor=e.target.id
+            }
+            if(e.target.id ==="blue"){
+                body.style.backgroundColor=e.target.id
+            }
+            if(e.target.id ==="yellow"){
+                body.style.backgroundColor=e.target.id
+            }
+
+
+        })
+      })
+
+
+    const form = document.querySelector("form")
+
+    form.addEventListener("submit",function(e){
+        e.preventDefault()
+
+    const height = parseInt(document.querySelector("#height").value)
+    const weight = parseInt(document.querySelector("#Weight").value)
+    const results = document.querySelector("#results")
+    const bmig = document.querySelector("#bmig")
+
+    if(height === "" || height < 0 || isNaN(height)){
+        results.innerHTML = `please give  a valid height ${height}`
+    }
+    if(weight === "" || weight < 0 || isNaN(weight)){
+        results.innerHTML = `please give  a valid weight ${weight}`
+    }
+    else{
+     const bmi = (weight / ((height*height)/10000)).toFixed(2)
+     results.innerHTML =`<span>${bmi}</span>`
+
+    if(bmi <= 18.5){
+        const a ="Under Weighat"
+        bmig.innerHTML =`<span>${a}</span>`
+    }
+    if(bmi >= 18.6 && bmi <= 24.9){
+        bmig.innerHTML =`<span>Normal Range</span>`   
+    }
+    if(bmi >= 24.10){
+        bmig.innerHTML =`<span>Over weight</span>`
+    }
+    }
+
+    })
+
+    </script>
+</html>

@@ -13,6 +13,7 @@
             
         }
         .main{
+            margin-top: 1rem;
             display: flex;
             height: 100vh;
             width: 100vw;
@@ -20,12 +21,12 @@
 
         }
         .box1{
-            height: 100%;
+            height: 80%;
             width: 100%;
             /* background-color:  red; */
         }
         .box2{
-            height: 100%;
+            height: 80%;
             width: 100%;
             padding: 3rem;
             /* background-color:  yellowgreen; */
@@ -57,7 +58,7 @@
             display: flex;
             justify-content: space-between;
             flex-direction: row;
-            height: 20%;
+            height: 30%;
             width: 100%;
             /* background-color: aquamarine; */
             /* border: 1px solid red; */
@@ -112,13 +113,18 @@
             border-top: 2px solid gray;
             padding: 1rem;
         }
+        .row{
+            display: flex;
+            flex-direction: column;
+        }
+       
     </style>
 </head>
 <body>
     <div class="main">
         <div class="box1">
             <div class="boxmain1">
-                <h2>Summary</h2>
+                <h2 style="color: darkgoldenrod;">Summary</h2>
                 <h3 class="scu">Booking details</h3>
                 <div class="imgdiv">
                     <div class="img">
@@ -158,19 +164,24 @@
 
             <div class="box2">
                 <div class="secondbox">
-                    <h2>Promo code</h2>
+
+
+                    <h2>Enter Amount</h2>
                     <div>
+                        <input type="number" id="amountInput" placeholder="Enter amount">
+                    </div>
+                    <br>
+
+                    <h2>Promo code</h2>
+                    <div class="promo" >
                         <input type="text" id="promoCodeInput" placeholder="Enter promo code">
                         <button onclick="applyPromoCode()">Apply</button>
                         <p id="message"></p>
                     </div>
             
                     <!-- Input field for entering the amount -->
-                    <h2>Enter Amount</h2>
-                    <div>
-                        <input type="number" id="amountInput" placeholder="Enter amount">
-                    </div>
-            
+                    <br>
+                    
                     <h2>Payment Details</h2>
                     <div class="boxl">
                         <div class="boxdetail">
@@ -187,14 +198,16 @@
                         </div>
                         <div class="boxdetail total">
                             <h3>Total</h3>
-                            <h3 id="totalAmount">$0</h3>
+                            <h3 id="totalAmount">$0</h3>    
                         </div>
                     </div>
             
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odit veritatis nesciunt! Error, nesciunt! Magnam</p>
             
                     <div class="totaldiv">
-                        <h3>Total</h3>
+                        <div id="row">
+                        <h3 >Total</h3>
+                        <h3 id="total">$0</h3>  </div> 
                         <button onclick="payNow()">Pay Now</button>
                     </div>
                 </div>
@@ -208,47 +221,52 @@
 </body>
 
      <script>
+    
     function applyPromoCode() {
         const promoCodeInput = document.getElementById("promoCodeInput").value;
         let summaryAmount = parseFloat(document.getElementById("amountInput").value) || 0; // Get the amount from the input field
         let discount = 0;
 
-        // Check the promo code and apply the corresponding discount
-        switch (promoCodeInput) {
-            case "off20":
+        if (promoCodeInput === "20off") {
+            // Apply 20% discount for amounts more than 500
+            if (summaryAmount >= 500) {
                 discount = summaryAmount * 0.2;
-                break;
-            case "off30":
-                discount = summaryAmount * 0.3;
-                break;
-            case "off40":
-                discount = summaryAmount * 0.4;
-                break;
-            default:
-                // Invalid promo code
-                document.getElementById("message").textContent = "Invalid promo code";
+            } else {
+                document.getElementById("message").textContent = "Minimum amount for 20% discount is 500.";
                 return;
+            }
+        } else if (promoCodeInput === "30off") {
+            // Apply 30% discount for amounts more than 1000
+            if (summaryAmount >= 1000) {
+                discount = summaryAmount * 0.3;
+            } else {
+                document.getElementById("message").textContent = "Minimum amount for 30% discount is 1000.";
+                return;
+            }
+        } else {
+            // Invalid promo code
+            document.getElementById("message").textContent = "Invalid promo code";
+            return;
         }
 
         // Calculate the new total amount after applying the discount
         let totalAmount = summaryAmount - discount;
 
-        // Calculate GST at 18%
-        const gstAmount = totalAmount * 0.18;
-
         // Update the displayed amounts
         document.getElementById("message").textContent = `Applied ${promoCodeInput} promo code: -$${discount.toFixed(2)}`;
+        document.getElementById("gstAmount").textContent = `$${(totalAmount * 0.18).toFixed(2)}`; // Assuming 18% GST
         document.getElementById("summaryAmount").textContent = `$${summaryAmount.toFixed(2)}`;
         document.getElementById("totalAmount").textContent = `$${totalAmount.toFixed(2)}`;
-        document.getElementById("gstAmount").textContent = `$${gstAmount.toFixed(2)}`;
+        document.getElementById("total").textContent = `$${totalAmount.toFixed(2)}`;
     }
 
-    function payNow() {
-        // Implement your payment processing logic here
-        // This function will be triggered when the "Pay Now" button is clicked
-        // You can redirect the user to a payment gateway or perform any other necessary actions.
-        console.log("Payment processing logic goes here.");
-    }
+    // function payNow() {
+    //     // Implement your payment processing logic here
+    //     // This function will be triggered when the "Pay Now" button is clicked
+    //     // You can redirect the user to a payment gateway or perform any other necessary actions.
+    //     console.log("Payment processing logic goes here.");
+    // }
+
 </script>
 
    

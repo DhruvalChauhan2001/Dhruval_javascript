@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .blue{
+            --clr:#4285F4;
+        }
+        .red{
+            --clr:#DB4437;
+        }
+        .yellow{
+            --clr:#F4B400;
+        }
+        .green{
+            --clr:#0F9D58;
+        }
+        .pink{
+            --clr:#c82ce0;
+        }
+    
+        body{
+            background-color: #636e72;
+            font-family: "Roboto";
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0%;
+            overflow-x: hidden;
+        }
+        h1{
+            color:  rgb(226,226, 226);
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px #000;
+        }
+        .box{
+            background-color:var(--clr);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 200px;
+            /* border: 5px solid red; */
+            margin: 10px;
+            border-radius: 20px;
+            box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+            transform: translateX(400%);
+            transition: transform 0.9s ease ;
+        }
+        .box:nth-of-type(even){
+            transform: translateX(-400%);
+        }
+        .box.show{
+            transform: translateX(0);
+        }
+        .box h2{
+            font-size: 45px;
+            text-shadow: 2px 2px 3px #000;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>Scroll to see the animation </h1>
+
+    <div class="box blue show">
+        <h2>Cotent</h2>
+    </div>
+    <div class="box red">
+        <h2>Cotent</h2>
+    </div>
+    <div class="box yellow">
+        <h2>Cotent</h2>
+    </div>
+    <div class="box green">
+        <h2>Cotent</h2>
+    </div>
+        <div class="box pink">
+            <h2>Cotent</h2>
+        </div>
+    <div class="box blue">
+        <h2>Cotent</h2>
+    </div>
+    <div class="box red">
+        <h2>Cotent</h2>
+    </div>
+    <div class="box yellow">
+        <h2>Cotent</h2>
+    </div>
+    <div class="box green">
+        <h2>Cotent</h2>
+    </div>
+    <div class="box pink">
+        <h2>Cotent</h2>
+    </div>
+</body>
+
+    <script>
+        const boxes = document.querySelectorAll(".box")
+
+        window.addEventListener("scroll",function(){
+          const triggerBottom =  window.innerHeight / 5 * 4;
+
+          boxes.forEach((box)=>{
+            const boxTop = box.getBoundingClientRect().top
+
+            if(boxTop < triggerBottom){
+                box.classList.add("show")
+            }
+            else{
+                box.classList.remove("show")
+            }
+          })
+        })
+    </script>
+</html>
