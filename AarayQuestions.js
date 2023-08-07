@@ -1062,3 +1062,40 @@
 // let a;
 // console.log(a)
 
+
+
+// let arr =[
+//     {type:"game",value:20},
+//     {type:"othar",value:25},
+//     {type:"audio",value:25},
+//     {type:"video",value:25},
+//     {type:"game",value:10},
+//     {type:"othar",value:30},
+//     {type:"audio",value:15},
+//     {type:"video",value:20},
+// ]
+
+// let ab=[]
+// arr.forEach((item)=>{
+//     let exisArray = ab.find((fin)=>fin.value === item.value)
+//     if(exisArray){
+//         exisArray.value += item.value
+//     }
+//     else{
+//         ab.push({type:item.type,value:item.value})
+//     }
+// })
+// console.log(ab)
+
+// //////////////////// task 2
+// let empty = {}
+// arr.forEach((e) => {
+//     let a = empty[e.type]
+//     if(a){
+//         empty[e.type] += e.value
+//     }else{
+//         empty[e.type] = e.value
+//     }
+// })
+// console.log(empty);
+

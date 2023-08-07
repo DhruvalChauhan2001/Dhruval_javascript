@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
+    <form action="" >
        <input type="file" id="image">
        <label for="image" id="imageLabel"></label>
        <div id="result"></div>
@@ -20,9 +20,9 @@
         document.getElementById("result").innerHTML = "";
 
         var image = event.target.files[0];
-        var output = document.getElementById("output");
 
         if (!image) {
+            var output = document.getElementById("output");
             if (output) {
                 output.remove();
             }
@@ -34,16 +34,18 @@
 
         if (ext === "jpg" || ext === "png") {
             if (image.size <= 5 * 1024 * 1024) {
-                if (output) {
-                    output.src = URL.createObjectURL(image);
-                } else {
-                    output = document.createElement("img");
-                    output.style = "height: 300px; width: 500px;";
-                    output.id = "output";
-                    output.classList.add("validation_img");
-                    output.src = URL.createObjectURL(image);
-                    document.getElementById("imageLabel").after(output);
-                }
+                var output = document.createElement("img");
+                output.style = "height: 300px; width: 500px;";
+                output.id = "output";
+                output.classList.add("validation_img");
+                output.src = URL.createObjectURL(image);
+
+                var existingOutput = document.getElementById("output");
+                // if (existingOutput) {
+                //     existingOutput.remove();
+                // }
+
+                document.getElementById("imageLabel").after(output);
             } else {
                 document.getElementById("result").innerHTML = "File size should be less than 5MB.";
             }
