@@ -6,6 +6,33 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <textarea name="" id="text" cols="30" rows="5"></textarea>
+    <br>
+    <button onclick="getdata()">Check it</button>
+    <h4>Result will be declare here</h4>
+    <p id="result"></p>
+
+    <h3>get redio button value</h3>
+    <input type="radio" name="gender" value="male">male
+    <br>
+    <input type="radio" name="gender" value="female">female
+    <button onclick="genderval()">submit</button>
+    <p id="outputgender"></p>
 </body>
+
+<script>
+    function getdata(){
+        var data =document.getElementById("text").value
+        document.getElementById("result").innerHTML=data
+    }
+
+    function genderval(){
+      var inputdata =  document.getElementsByName("gender").value
+      for(var i = 0; i <= inputdata.length; i++){
+        if(inputdata[i]){
+            document.getElementById("outputgender").innerHTML=inputdata[i].value
+        }
+      }
+    }
+</script>
 </html>

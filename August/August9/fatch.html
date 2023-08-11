@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* background-color: aqua; */
+    }
+    img{
+        height: 200px;
+        width: 200px;
+    }
+    .cennter{
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      
+    }
+    #btn{
+        margin-top: 1rem;
+        border-radius: 15px;
+        height: 40px;
+        width: 100px;
+    }
+    .details{
+        margin-bottom: 1rem;
+    }
+    </style>
+</head>
+<body>
+    <!-- <h2>API fatch</h2> -->
+
+    <h1 style="text-align: center; margin-top: 2rem;"> What does Your Name Say About Your Personality ?</h1>
+    <div class="cennter">
+        <div class="details">
+            <label for="">Enter Your Name</label>
+            <input type="text" id="nameid">
+        </div>
+
+        <div class="imgdiv">
+            <img src="https://img.freepik.com/premium-photo/fun-cartoon-kid-with-rain-gear_183364-63948.jpg" alt="" id="imgchange">
+        </div>
+        <button id="btn">Click Here</button>
+    </div>
+</body>
+<!-- <script src="fatch.js"></script> -->
+<script>
+    document.getElementById("btn").addEventListener("click",function(){
+        if(nameid.value == ""){
+            alert("Please Eneter Your Name")
+        }else{
+
+     const name = document.getElementById("nameid").value
+     alert(name)
+
+     document.getElementById("imgchange").setAttribute("src",`https://joesch.moe/api/v1/${name}`)
+
+     const b =  document.getElementById("nameid")
+     console.log(b)
+    }})
+</script>
+</html>

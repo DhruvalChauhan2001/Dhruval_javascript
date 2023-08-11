@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+
+    // async function dhru(){
+    //     console.log("A")
+    //     await console.log("B") 
+    //         console.log("C")
+
+    // }
+    // dhru()
+    // console.log("D")
+    // console.log("E")
+
+
+    /////////////////////// 
+
+
+    function wait2() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("wait 2 second please")
+            }, 2000)
+        })
+    }
+
+    function wait4() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("wait 4 second please")
+                // reject("sooooorrry")
+               
+            }, 2000)
+        })
+    }
+
+    function wait6() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // resolve("wait 6 second please")
+                // reject("sorry")
+            }, 2000)
+        })
+    }
+
+    // async function dhru() {
+    //     try {
+    //         const a = await wait2()
+    //         console.log(a)
+    //         const b = await wait4()
+    //         console.log(b)
+    //         const c = await wait6()
+    //         console.log(c)
+    //     }
+    //     catch (err){
+    //       console.log("this are Error",err)
+    //     }
+    // }
+    // dhru()
+
+    ////// then()catch()
+    // wait2().then((data)=>{
+    //     console.log("yes 1",data)
+    // }).catch((err)=>{
+    //     console.log("this 1 ERROR",err)
+    // })
+
+    // wait4().then((data)=>{
+    //     console.log("yes 2 ",data)
+    // }).catch((err)=>{
+    //     console.log("this 2 ERROR",err)
+    // })
+
+    //////
+
+    wait2().then((dh1)=>{
+        console.log("here is dh1",dh1)
+        return wait4(dh1) 
+    }).then((dh2)=>{
+        console.log("here is dh2",dh2)
+        return wait6(dh2) 
+    }).then((dh3)=>{
+        console.log("here is dh3",dh3)
+        return wait6(dh3) 
+    })
+    .catch((err)=>{
+        console.log("THIS ARE ERROR ",err)
+    })
+
+</script>
+
+</html>

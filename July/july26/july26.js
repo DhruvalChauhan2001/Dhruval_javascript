@@ -61,3 +61,29 @@
 // }
 
 // revint(12345)
+
+
+
+const Rack =[
+        {id:1,name:"medi1"},
+        {id:2,name:"medi2"},
+        {id:3,name:"medi3"},
+        {id:4,name:"medi4"},
+        {id:5,name:"medi5"},
+        {id:6,name:"medi6"},
+        {id:7,name:"medi7"},
+        {id:8,name:"medi8"},
+        {id:9,name:"medi9"},
+        {id:10,name:"medi10"},
+    ]
+
+const Batch = [
+        {rack_id:1,Batch:"A1"},
+        {rack_id:2,Batch:"A2"},
+        {rack_id:3,Batch:"A3"},
+        {rack_id:4,Batch:"A4"},
+        {rack_id:5,Batch:"A5"},
+    ]
+    const filteredBatches = Batch.filter(batch => !Rack.some(rack => rack.id === batch.rack_id));
+
+    console.log(filteredBatches);
